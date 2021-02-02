@@ -3,25 +3,25 @@ use rand::Rng;
 use std::cmp::Ordering;
 
 fn main(){
-println!("开始游戏");
-# 生成一个神秘数字
-let secret_num = rand::thread_rng().gen_range(1, 101);
-loop{
-println!("请输入");
-let mut guess = String::new();
-io:stdin().read_line(&mut guess).expect("输入失败");
-let guess: u32 = match guess.trim().parse(){
-Ok(num) => num,
-Err(_) => contiue,
-};
-println!("您输入的是{}"， guess);
-match guess.cmp(&secret_num){
-Ordering::low => println!("太小了")，
-Ordering::Greater => println("太大了")，
-Ordering::Equeal =>{
-println!("你赢了")；
-break;
-}
-}
-}
+  println!("开始游戏");
+  # 生成一个神秘数字
+  let secret_num = rand::thread_rng().gen_range(1, 101);
+  loop{
+    println!("请输入");
+    let mut guess = String::new();
+    io:stdin().read_line(&mut guess).expect("输入失败");
+    let guess: u32 = match guess.trim().parse(){
+      Ok(num) => num,
+      Err(_) => contiue,
+    };
+    println!("您输入的是{}"， guess);
+    match guess.cmp(&secret_num){
+      Ordering::low => println!("太小了")，
+      Ordering::Greater => println("太大了")，
+      Ordering::Equeal =>{
+        println!("你赢了")；
+        break;
+      }
+    }
+  }
 }
